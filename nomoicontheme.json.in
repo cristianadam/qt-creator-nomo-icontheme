@@ -1,0 +1,16 @@
+{
+    "Id" : "nomoicontheme",
+    "Name" : "NomoIconTheme",
+    "Version" : "${IDE_VERSION}",
+    "CompatVersion" : "${IDE_VERSION_COMPAT}",
+    "Vendor" : "Cristian Adam",
+    "VendorId" : "cristianadam",
+    "Copyright" : "(C) 2019 Andreas Schulz, Cristian Adam, ${IDE_COPYRIGHT}",
+    "License" : "MIT",
+    "SoftLoadable" : true,
+    "Description" : "Custon icon theme for Qt Creator",
+    "LongDescription" : ${LONG_DESCRIPTION},
+    "Url" : "https://github.com/cristianadam/qt-creator-icontheme",
+    "DocumentationUrl" : "",
+    ${IDE_PLUGIN_DEPENDENCIES}
+}

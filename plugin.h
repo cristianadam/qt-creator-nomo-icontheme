@@ -9,7 +9,7 @@ namespace IconTheme::Internal {
 class IconThemePlugin final : public ExtensionSystem::IPlugin {
     Q_OBJECT
     Q_PLUGIN_METADATA(IID "org.qt-project.Qt.QtCreatorPlugin" FILE
-                          "icontheme.json")
+                          "nomoicontheme.json")
 
 public:
     explicit IconThemePlugin() noexcept;

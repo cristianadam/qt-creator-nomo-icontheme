@@ -27,21 +27,27 @@ static QByteArray *folderIconData;
 static id customThemeIconForFile(id objc_self, SEL objc_cmd, id fullPath) {
     BOOL isDir = NO;
     Class NSFileManager = objc_getClass("NSFileManager");
-    id defaultManager = objc_msgSend(reinterpret_cast<id>(NSFileManager),
-                                     sel_registerName("defaultManager"));
-    objc_msgSend(defaultManager,
-                 sel_registerName("fileExistsAtPath:isDirectory:"),
-                 fullPath,
-                 reinterpret_cast<id>(&isDir));
+
+    id defaultManager = ((id(*)(Class, SEL))objc_msgSend)(
+        NSFileManager, sel_registerName("defaultManager"));
+
+    ((void (*)(id, SEL, id, id))objc_msgSend)(
+        defaultManager,
+        sel_registerName("fileExistsAtPath:isDirectory:"),
+        fullPath,
+        reinterpret_cast<id>(&isDir));
+
     if (isDir) {
         Class NSImage = objc_getClass("NSImage");
-        id imageMemory = objc_msgSend(reinterpret_cast<id>(NSImage),
-                                      sel_registerName("alloc"));
-        return objc_msgSend(imageMemory,
-                            sel_registerName("initWithData:"),
-                            folderIconData->toRawNSData());
+        id imageMemory = ((id(*)(id, SEL))objc_msgSend)(
+            reinterpret_cast<id>(NSImage), sel_registerName("alloc"));
+        return ((id(*)(id, SEL, NSData *))objc_msgSend)(
+            imageMemory,
+            sel_registerName("initWithData:"),
+            folderIconData->toRawNSData());
     }
-    return originalIconForFile(objc_self, objc_cmd, fullPath);
+    return ((id(*)(id, SEL, id))originalIconForFile)(
+        objc_self, objc_cmd, fullPath);
 }
 #endif
 
