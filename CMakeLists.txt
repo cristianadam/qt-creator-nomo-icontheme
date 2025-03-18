@@ -1,6 +1,6 @@
 cmake_minimum_required(VERSION 3.20)
 
-project(nomoicontheme)
+project(NomoIconTheme)
 
 set(CMAKE_AUTOMOC ON)
 set(CMAKE_AUTORCC ON)
@@ -10,14 +10,14 @@ set(CMAKE_CXX_STANDARD_REQUIRED ON)
 set(CMAKE_CXX_EXTENSIONS OFF)
 
 find_package(QtCreator REQUIRED COMPONENTS Core)
-find_package(Qt6 COMPONENTS Widgets REQUIRED)
+find_package(Qt6 COMPONENTS Gui Svg REQUIRED)
 
-add_qtc_plugin(nomoicontheme
+add_qtc_plugin(NomoIconTheme
   LONG_DESCRIPTION_MD README.md
   PLUGIN_DEPENDS
     QtCreator::Core
   DEPENDS
-    Qt::Widgets
+    Qt::Gui Qt::GuiPrivate Qt::Svg
     QtCreator::ExtensionSystem
     QtCreator::Utils
   SOURCES

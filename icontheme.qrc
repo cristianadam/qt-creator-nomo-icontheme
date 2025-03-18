@@ -1,7 +1,22 @@
 <RCC>
     <qresource prefix="/">
         <file>icons/qtcreator-nomo/index.theme</file>
-        <file>icons/qtcreator-nomo/scalable/places/folder.svg</file>
+        <file>icons/qtcreator-nomo/scalable/places/folder-hack.svg</file>
+        <file>icons/qtcreator-nomo/scalable/places/folder-open.svg</file>
+        <file>icons/qtcreator-nomo/scalable/mimetypes/application-json.svg</file>
+        <file>icons/qtcreator-nomo/scalable/mimetypes/application-x-executable.svg</file>
+        <file>icons/qtcreator-nomo/scalable/mimetypes/application-x-font-ttf.svg</file>
+        <file>icons/qtcreator-nomo/scalable/mimetypes/application-x-sh.svg</file>
+        <file>icons/qtcreator-nomo/scalable/mimetypes/application-x-yaml.svg</file>
+        <file>icons/qtcreator-nomo/scalable/mimetypes/application-xml.svg</file>
+        <file>icons/qtcreator-nomo/scalable/mimetypes/application-zip.svg</file>
+        <file>icons/qtcreator-nomo/scalable/mimetypes/image.svg</file>
         <file>icons/qtcreator-nomo/scalable/mimetypes/inode-directory.svg</file>
+        <file>icons/qtcreator-nomo/scalable/mimetypes/library.svg</file>
+        <file>icons/qtcreator-nomo/scalable/mimetypes/text-html.svg</file>
+        <file>icons/qtcreator-nomo/scalable/mimetypes/text-markdown.svg</file>
+        <file>icons/qtcreator-nomo/scalable/mimetypes/text-plain.svg</file>
+        <file>icons/qtcreator-nomo/scalable/mimetypes/text-x-generic.svg</file>
+        <file>icons/qtcreator-nomo/scalable/mimetypes/text-x-lua.svg</file>
     </qresource>
 </RCC>

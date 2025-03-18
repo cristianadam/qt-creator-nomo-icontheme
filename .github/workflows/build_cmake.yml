@@ -78,7 +78,8 @@ jobs:
             COMMAND sudo apt-get update
           )
           execute_process(
-            COMMAND sudo apt-get install -y libgl1-mesa-dev
+            COMMAND sudo apt-get install -y libgl1-mesa-dev libvulkan-dev libxcb-xinput-dev libxcb-xinerama0-dev libxkbcommon-dev libxkbcommon-x11-dev
+                                            libxcb-image0 libxcb-keysyms1 libxcb-render-util0 libxcb-xkb1 libxcb-randr0
             RESULT_VARIABLE result
           )
           if (NOT result EQUAL 0)
@@ -100,7 +101,9 @@ jobs:
           )
           execute_process(
             COMMAND
-              sudo apt-get install -y crossbuild-essential-arm64 libgl1-mesa-dev:arm64
+              sudo apt-get install -y crossbuild-essential-arm64 libgl1-mesa-dev:arm64 libvulkan-dev:arm64 libxcb-xinput-dev:arm64 libxcb-xinerama0-dev:arm64
+                                      libxkbcommon-dev:arm64 libxkbcommon-x11-dev:arm64 libxcb-image0:arm64 libxcb-keysyms1:arm64 libxcb-render-util0:arm64
+                                      libxcb-xkb1:arm64 libxcb-randr0:arm64
             RESULT_VARIABLE result
           )
           if (NOT result EQUAL 0)
@@ -166,7 +169,7 @@ jobs:
             execute_process(COMMAND ${CMAKE_COMMAND} -E tar xvf "$ENV{GITHUB_WORKSPACE}/${archive}" WORKING_DIRECTORY "${qt_dir}/${subdir}")
           endfunction()
 
-          foreach(package qtbase qtdeclarative)
+          foreach(package qtbase qtdeclarative qtsvg)
             downloadAndExtract(
               "${qt_base_url}/qt.qt6.${qt_version_dotless}.${qt_package_arch_suffix}/${qt_package_version}${package}${qt_package_suffix}.7z"
               ${package}.7z
