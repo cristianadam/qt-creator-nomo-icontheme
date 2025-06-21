@@ -242,7 +242,7 @@ public:
             QIcon::setThemeName("qtcreator-nomo");
     }
 
-    bool initialize(const QStringList &arguments, QString *errorString) override {
+    void initialize() override {
         Utils::FileIconProvider::registerIconForMimeType(
             QIcon(":/icons/qtcreator-nomo/scalable/mimetypes/text-markdown.svg"), "text/markdown");
         Utils::FileIconProvider::registerIconForMimeType(
@@ -303,7 +303,6 @@ public:
                 QIcon(":/icons/qtcreator-nomo/scalable/mimetypes/application-x-executable.svg"),
                 QString::fromLatin1(exeMimeType));
         }
-        return true;
     }
 
     ShutdownFlag aboutToShutdown() override
