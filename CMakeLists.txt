@@ -10,7 +10,7 @@ set(CMAKE_CXX_STANDARD_REQUIRED ON)
 set(CMAKE_CXX_EXTENSIONS OFF)
 
 find_package(QtCreator REQUIRED COMPONENTS Core)
-find_package(Qt6 COMPONENTS Gui Svg REQUIRED)
+find_package(Qt6 COMPONENTS Gui GuiPrivate Svg REQUIRED)
 
 add_qtc_plugin(NomoIconTheme
   LONG_DESCRIPTION_MD README.md
